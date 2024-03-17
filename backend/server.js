@@ -7,6 +7,10 @@ import UserRoute from "./routes/UserRoutes.js"
 
 const app = express();
 
+// Middlewares
+
+app.use(express.json())
+
 // Routes
 
 app.use('/api/v1/user', UserRoute)
