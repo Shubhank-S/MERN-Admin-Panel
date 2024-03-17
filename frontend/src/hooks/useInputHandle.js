@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-
 function useInputHandle() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -10,7 +9,7 @@ function useInputHandle() {
     const [secretAnswer, setSecretAnswer] = useState("");
     console.log(name, email, password, phone, address, secretAnswer)
     return (
-        [setName, setEmail, setPassword, setPhone, setAddress, setSecretAnswer]
+        [name, email, password, phone, address, secretAnswer, setName, setEmail, setPassword, setPhone, setAddress, setSecretAnswer]
     )
 }
 

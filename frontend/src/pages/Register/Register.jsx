@@ -1,19 +1,37 @@
 import { useState } from "react";
-import "./Register.css";
+import { useNavigate } from "react-router-dom";
 import useInputHandle from "../../hooks/useInputHandle";
+import axios from "axios";
+import "./Register.css";
 
 function Register() {
-  const [
-    setName,
-    setEmail,
-    setPassword,
-    setPhone,
-    setAddress,
-    setSecretAnswer,
-  ] = useInputHandle();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [secretAnswer, setSecretAnswer] = useState("");
+  const navigate = useNavigate();
+
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        `http://localhost:8080/api/v1/user/register`,
+        { name, email, password, phone, address, secretAnswer }
+      );
+      if (response.status === 200) {
+        navigate("/login");
+      } else {
+        alert(`Login Failed`);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="register">
-      <form className="register_form">
+      <form className="register_form" onSubmit={handleRegister}>
         <h1>REGISTER </h1>
         <input
           type="text"

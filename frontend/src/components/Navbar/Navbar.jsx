@@ -7,13 +7,19 @@ function Navbar() {
       <nav>
         <ul className="header_links">
           <li>
-            <NavLink to="/" className="header_link" >Home</NavLink>
+            <NavLink to="/" className="header_link">
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/register" className="header_link">Register</NavLink>
+            <NavLink to="/register" className="header_link">
+              Register
+            </NavLink>
           </li>
           <li>
-            <NavLink className="header_link">Home</NavLink>
+            <NavLink to="/login" className="header_link">
+              Login
+            </NavLink>
           </li>
           <li>
             <NavLink className="header_link">Home</NavLink>
