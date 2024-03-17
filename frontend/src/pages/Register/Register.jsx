@@ -1,16 +1,19 @@
-import { useState } from 'react';
-import './Register.css'
+import { useState } from "react";
+import "./Register.css";
+import useInputHandle from "../../hooks/useInputHandle";
 
 function Register() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [phone, setPhone] = useState("");
-  const [address, setAddress] = useState("");
-  const [secretAnswer, setSecretAnswer] = useState("");
+  const [
+    setName,
+    setEmail,
+    setPassword,
+    setPhone,
+    setAddress,
+    setSecretAnswer,
+  ] = useInputHandle();
   return (
     <div className="register">
-      <form className='register_form'>
+      <form className="register_form">
         <h1>REGISTER </h1>
         <input
           type="text"
@@ -45,7 +48,7 @@ function Register() {
         <button>Register</button>
       </form>
     </div>
-  )
+  );
 }
 
-export default Register
+export default Register;
