@@ -1,5 +1,6 @@
 import express from "express"
 import dotenv from 'dotenv'
+import connectDB from "./database/db.js";
 import UserRoute from "./routes/UserRoutes.js"
 
 // Rest Object
@@ -10,9 +11,13 @@ const app = express();
 
 app.use('/api/v1/user', UserRoute)
 
-// Configure dotenv
+// dotenv configuration
 
 dotenv.config()
+
+// Database configuration
+
+connectDB();
 
 // PORT
 
