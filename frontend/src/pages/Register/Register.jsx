@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import useInputHandle from "../../hooks/useInputHandle";
 import axios from "axios";
 import "./Register.css";
 
@@ -20,6 +19,9 @@ function Register() {
         `http://localhost:8080/api/v1/user/register`,
         { name, email, password, phone, address, secretAnswer }
       );
+      if ((!name, !email, !password, !phone, !address, !secretAnswer)) {
+        alert(`Please Fill all the entries`);
+      }
       if (response.status === 200) {
         navigate("/login");
       } else {
@@ -30,7 +32,7 @@ function Register() {
     }
   };
   return (
-    <div className="register">
+    <section className="register">
       <form className="register_form" onSubmit={handleRegister}>
         <h1>REGISTER </h1>
         <input
@@ -40,7 +42,7 @@ function Register() {
         />
         <input
           type="email"
-          placeholder="Enter your Email"
+          placeholder="Enter your Email...."
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
@@ -65,7 +67,7 @@ function Register() {
         />
         <button>Register</button>
       </form>
-    </div>
+    </section>
   );
 }
 

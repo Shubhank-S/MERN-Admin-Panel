@@ -1,15 +1,15 @@
-.register {
+.login {
     min-height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.register form {
+.login form {
     background-color: #fff;
-    margin-top: 40px;
+    margin-top: 150px;
     width: 400px;
-    height: 550px;
+    height: 330px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,9 +18,7 @@
     box-shadow: 2px 2px 2px 2px grey;
 }
 
-
-
-.register form input {
+.login form input {
     margin: 8px;
     padding: 4px;
     width: 270px;
@@ -30,7 +28,7 @@
     font-size: medium;
 }
 
-.register form button {
+.login form button {
     width: 200px;
     height: 36px;
     border-radius: 10px;
@@ -43,7 +41,8 @@
     margin-top: 10px;
 }
 
-input[type="file"] {
-    width: 180px;
-    border: 1px solid rgb(131, 129, 129);
+.login_forgotpassword{
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: bold;
 }
