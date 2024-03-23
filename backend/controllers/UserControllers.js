@@ -38,7 +38,10 @@ export const LoginController = async (req, resp) => {
     if (match) {
       return resp.send({ message: "Invalid Password" }).status(200)
     }
-    resp.send({ message: "User login Successfull", userExist }).status(200)
+
+    const token = await userExist.generatetoken()
+
+    resp.send({ message: "User login Successfull",token, userExist }).status(200)
   } catch (error) {
     resp.send({ message: "User Login Failed", error }).status(400)
   }
