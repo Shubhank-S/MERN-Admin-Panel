@@ -7,6 +7,17 @@ function ForgotPassword() {
   const [newPassword, setNewPassword] = useState("");
   const handleForgotPassword = async (e) => {
     e.preventDefault();
+    const response = await axios.post(
+      `http://localhost:8080/api/v1/user/forgotpassword`,
+      { email, secretAnswer ,newPassword}
+    );
+    if ((!email, !secretAnswer ,!newPassword)) {
+      toast.error(`Please Fill all the entries`);
+    }
+    if (response.status === 200) {
+      navigate("/login");
+      toast.success(`Login Succesfull`);
+    }
   };
   return (
     <div className="forgotpassword">

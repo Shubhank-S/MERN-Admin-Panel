@@ -22,7 +22,6 @@ function Login() {
       navigate("/");
       toast.success(`Login Succesfull`);
     }
-    
   };
   return (
     <div className="login">
@@ -41,7 +40,7 @@ function Login() {
 
         <button>LOGIN</button>
         <section className="login_forgotpassword">
-          <NavLink>Forgot password??</NavLink>
+          <NavLink to="/forgotpassword">Forgot password??</NavLink>
         </section>
       </form>
     </div>
