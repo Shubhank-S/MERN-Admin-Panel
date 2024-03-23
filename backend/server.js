@@ -1,7 +1,8 @@
 import express from "express"
 import dotenv from 'dotenv'
-import connectDB from "./database/db.js";
+import morgan from "morgan";
 import cors from 'cors'
+import connectDB from "./database/db.js";
 import UserRoute from "./routes/UserRoutes.js"
 
 // Rest Object
@@ -11,6 +12,7 @@ const app = express();
 // Middlewares
 
 app.use(express.json())
+app.use(morgan('dev'))
 app.use(cors())
 
 // Routes
