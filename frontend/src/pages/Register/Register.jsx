@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 import axios from "axios";
 import "./Register.css";
 
@@ -19,13 +20,14 @@ function Register() {
         `http://localhost:8080/api/v1/user/register`,
         { name, email, password, phone, address, secretAnswer }
       );
+      console.log(response);
       if ((!name, !email, !password, !phone, !address, !secretAnswer)) {
-        alert(`Please Fill all the entries`);
+        toast.error(`Please Fill all the entries`);
       }
       if (response.status === 200) {
         navigate("/login");
       } else {
-        alert(`Login Failed`);
+        toast.error(` Failed to register`);
       }
     } catch (error) {
       console.log(error);

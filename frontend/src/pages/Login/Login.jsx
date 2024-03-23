@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 import axios from "axios";
 import "./Login.css";
 
@@ -15,12 +16,13 @@ function Login() {
       { email, password }
     );
     if ((!email, !password)) {
-      alert(`Please Fill all the entries`);
+      toast.error(`Please Fill all the entries`);
     }
     if (response.status === 200) {
       navigate("/");
-      alert(`Login Succesfull`);
+      toast.success(`Login Succesfull`);
     }
+    
   };
   return (
     <div className="login">
