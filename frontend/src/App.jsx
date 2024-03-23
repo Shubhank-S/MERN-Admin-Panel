@@ -3,6 +3,7 @@ import Home from "./pages/Home/Home";
 import Register from "./pages/Register/Register";
 import Navbar from "./components/Navbar/Navbar";
 import Login from "./pages/Login/Login";
+import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />}/>
+          <Route path="/forgotpassword" element={<ForgotPassword />}/>
           <Route />
         </Routes>
       </BrowserRouter>
